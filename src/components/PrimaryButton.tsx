@@ -8,7 +8,7 @@ interface Props {
   border?: string;
 }
 
-const PrimaryButton = ({ bg, text, color, border, variant }: Props) => {
+const PrimaryButton = ({ bg, text, color, variant }: Props) => {
   return (
     <Button
       mx="auto"

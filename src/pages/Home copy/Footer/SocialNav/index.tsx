@@ -1,4 +1,4 @@
-import { List, ListItem, Image, Link } from "@chakra-ui/react";
+import { List, ListItem, Image } from "@chakra-ui/react";
 import IgIcon from "../../../../assets/icon-ig.png";
 import fbIcon from "../../../../assets/icon-fb.png";
 import linkedInIcon from "../../../../assets/icon-linkedin.png";

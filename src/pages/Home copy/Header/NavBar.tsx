@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { List, ListItem, Flex, Spacer } from "@chakra-ui/react";
+import { List, ListItem, Flex } from "@chakra-ui/react";
 
 import PrimaryButton from "../../../components/PrimaryButton";
 

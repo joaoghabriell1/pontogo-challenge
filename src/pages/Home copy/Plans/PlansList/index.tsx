@@ -1,9 +1,9 @@
-import LeftArrow from "../../../../assets/icon-left-arrow.svg";
 import RightArrow from "../../../../assets/icon-right-arrow.svg";
+import LeftArrow from "../../../../assets/icon-left-arrow.svg";
 import { HStack, Image, Flex } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { useState } from "react";
 import PlanCard from "../PlanCard";
+import { useState } from "react";
 import { plans } from "../plans";
 
 const PlansList = () => {
@@ -30,6 +30,7 @@ const PlansList = () => {
         return newOrder;
       });
     }
+
     if (value === "right") {
       setSelectedPlan((prev) => {
         if (prev === 4) {

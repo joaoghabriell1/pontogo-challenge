@@ -1,6 +1,5 @@
 import { List, ListItem, Image, Flex } from "@chakra-ui/react";
 import CheckIcon from "../../../../assets/icon-check.svg";
-import CloseIcon from "../../../../assets/icon-x.svg";
 import IconClose from "../../../../assets/icon-close.svg";
 
 import { BenefitType } from "../plans";
