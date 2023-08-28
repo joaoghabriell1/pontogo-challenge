@@ -15,7 +15,7 @@ const PlanCard = ({ selected, plan, position }: Props) => {
   return (
     <Card
       display={position === 3 ? "none" : "static"}
-      padding={{ base: "2.5rem 1rem", sm: "2.5rem 2.75em" }}
+      padding={{ base: "2.5rem 1rem", sm: "2.75rem 2.75em" }}
       borderRadius=".625rem"
       bgColor="rgba(212, 135, 135, 0.08)"
       backdropBlur="2.5px"
@@ -26,8 +26,8 @@ const PlanCard = ({ selected, plan, position }: Props) => {
       border="1px solid #8A53FF"
       sx={{ backdropFilter: "blur(2.5px)" }}
       minW={{ base: "17rem", sm: "20rem" }}
-      ml={selected ? "-2rem" : "0rem"}
-      mr={selected ? "-2rem" : "0rem"}
+      ml={selected ? "-3.5rem" : "0rem"}
+      mr={selected ? "-3.5rem" : "0rem"}
       opacity={selected ? "1" : ".3"}
     >
       <Header header={plan.heading} />

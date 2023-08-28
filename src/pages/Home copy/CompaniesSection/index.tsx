@@ -8,17 +8,17 @@ const Companies = () => {
   return (
     <>
       <HStack
-        mt="3.5rem"
-        px="2rem"
+        mt="4rem"
+        px={{ base: "1rem", lg: "4rem" }}
         align="center"
         justify="space-between"
         wrap="wrap"
         rowGap="2rem"
       >
-        <Image h={{ base: "2.5rem", lg: "3.5rem" }} src={BrainnyLogo} />
-        <Image h={{ base: "2.5rem", lg: "3.5rem" }} src={AmopetLogo} />
-        <Image h={{ base: "2.5rem", lg: "3.5rem" }} src={BusLogo} />
-        <Image h={{ base: "2.5rem", lg: "3.5rem" }} src={GoStudyLogo} />
+        <Image h={{ base: "2.5rem", lg: "4rem" }} src={BrainnyLogo} />
+        <Image h={{ base: "2.5rem", lg: "4rem" }} src={AmopetLogo} />
+        <Image h={{ base: "2.5rem", lg: "4rem" }} src={BusLogo} />
+        <Image h={{ base: "2.5rem", lg: "4rem" }} src={GoStudyLogo} />
       </HStack>
     </>
   );

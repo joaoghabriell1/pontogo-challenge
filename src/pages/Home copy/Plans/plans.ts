@@ -70,7 +70,7 @@ export const plans = [
     benefits: [
       { available: true, body: "Área de meus registros" },
       { available: true, body: "Dashboard" },
-      { available: true, body: "Acesso de 10 colaboradores" },
+      { available: true, body: "Acesso Ilimitado" },
       { available: true, body: "Suporte exclusivo" },
       { available: true, body: "Email corporativo" },
     ],

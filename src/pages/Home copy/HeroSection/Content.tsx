@@ -6,7 +6,7 @@ const Content = () => {
     <>
       <Box
         color="pure-white"
-        pt={{ base: "0rem", lg: "5rem" }}
+        pt={{ base: "0rem", lg: "2rem" }}
         textAlign={{ base: "center", lg: "start" }}
       >
         <Heading

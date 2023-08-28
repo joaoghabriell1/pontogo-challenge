@@ -4,7 +4,8 @@ const PlansHeading = () => {
     <>
       <Box my="4.3rem">
         <Heading
-          mb=".6rem"
+          fontWeight="800"
+          mb="4"
           color="pure-white"
           textAlign="center"
           fontSize="2xl"
@@ -16,7 +17,7 @@ const PlansHeading = () => {
           textAlign="center"
           fontSize="lg"
           mx="auto"
-          maxW="60ch"
+          maxW="52ch"
           opacity=".7"
         >
           Escolha o plano que melhor se encaixa na sua empresa e faça sua
