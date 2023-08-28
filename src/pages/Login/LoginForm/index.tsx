@@ -9,7 +9,7 @@ function LoginForm() {
     password: "",
   });
 
-  const [login, { loading, data, error }] = useMutation(LOGIN_USER_MUTATION);
+  const [login, { loading }] = useMutation(LOGIN_USER_MUTATION);
   const navigate = useNavigate();
 
   const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
@@ -21,9 +21,11 @@ function LoginForm() {
           password: inputs.password,
         },
       },
-      onCompleted: ({ login } /* : { login: currentUser } */) => {
+      onCompleted: ({ login }) => {
         localStorage.setItem("AUTH_TOKEN", login.jwt!);
         const role = login.user.role!.name;
+        console.log(login);
+        return;
         if (role === "admin") {
           navigate("/dashboard");
         }

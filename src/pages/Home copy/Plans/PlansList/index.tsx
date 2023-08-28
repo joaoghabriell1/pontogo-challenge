@@ -52,14 +52,13 @@ const PlansList = () => {
 
   return (
     <>
-      <Flex align="center">
+      <Flex align="center" justify="center">
         <motion.button
           whileHover={{
             scale: "1.4",
           }}
           whileTap={{
             scale: "1.6",
-            opacity: "0.5",
           }}
           value="left"
           onClick={handleClick}
@@ -68,7 +67,7 @@ const PlansList = () => {
         </motion.button>
         <HStack
           width="990px"
-          pl="20.3rem"
+          padding=".3rem"
           mx="auto"
           overflowX="hidden"
           justify="center"
@@ -78,6 +77,7 @@ const PlansList = () => {
             return (
               <PlanCard
                 key={index}
+                position={index}
                 selected={selectedPlan === plan!.id}
                 plan={plan!}
               />
@@ -90,7 +90,6 @@ const PlansList = () => {
           }}
           whileTap={{
             scale: "1.6",
-            opacity: "0.5",
           }}
           value="right"
           onClick={handleClick}

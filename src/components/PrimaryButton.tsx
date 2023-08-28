@@ -6,11 +6,13 @@ interface Props {
   color: string;
   variant?: string;
   border?: string;
+  onClick?: () => void;
 }
 
-const PrimaryButton = ({ bg, text, color, variant }: Props) => {
+const PrimaryButton = ({ bg, text, color, variant, onClick }: Props) => {
   return (
     <Button
+      onClick={onClick}
       mx="auto"
       color={color}
       borderRadius="0.3125rem"
