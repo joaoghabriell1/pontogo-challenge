@@ -58,7 +58,7 @@ const PlansList = () => {
             scale: "1.4",
           }}
           whileTap={{
-            scale: "1.6",
+            scale: "1.5",
           }}
           value="left"
           onClick={handleClick}

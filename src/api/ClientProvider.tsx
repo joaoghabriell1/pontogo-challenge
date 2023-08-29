@@ -42,6 +42,7 @@ function ClientProvider({ children }: Props) {
     cache: new InMemoryCache(),
     link: authLink.concat(link),
   });
+
   return (
     <>
       <ApolloProvider client={client}>{children}</ApolloProvider>

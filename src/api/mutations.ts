@@ -20,3 +20,21 @@ export const LOGIN_USER_MUTATION = graphql(`
     }
   }
 `);
+
+export const REGISTER_NEW_TIME_MUTATION = graphql(`
+  mutation createRegisteredTime($input: createRegisteredTimeInput) {
+    createRegisteredTime(input: $input) {
+      registeredTime {
+        id
+        created_at
+        updated_at
+        timeRegistered
+        user {
+          id
+          email
+        }
+        published_at
+      }
+    }
+  }
+`);

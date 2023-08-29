@@ -1,10 +1,21 @@
+import { Container, Flex } from "@chakra-ui/react";
 import LoginForm from "./LoginForm";
-
+import LoginHero from "./Hero";
 const Login = () => {
   return (
     <>
-      <h2>Login page</h2>
-      <LoginForm />
+      <Container
+        bg="rgba(255, 255, 255, 0.70)"
+        backdropBlur="25px"
+        maxW="1136px"
+        px={{ base: "1rem", xl: "0rem" }}
+        h="100vh"
+      >
+        <Flex>
+          <LoginHero />
+          <LoginForm />
+        </Flex>
+      </Container>
     </>
   );
 };
