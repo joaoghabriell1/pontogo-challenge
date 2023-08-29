@@ -1,7 +1,7 @@
-import React from "react";
+import { Box } from "@chakra-ui/react";
 
 const Registers = () => {
-  return <div>Registers</div>;
+  return <Box bg="red" flex="1"></Box>;
 };
 
 export default Registers;

@@ -26,7 +26,7 @@ function LoginForm() {
 
   const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(inputs);
+    localStorage.removeItem("AUTH_TOKEN");
     login({
       variables: {
         input: {
