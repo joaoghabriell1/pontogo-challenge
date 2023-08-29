@@ -5,7 +5,11 @@ import Logo from "../../assets/logo-pontogo-blue.svg";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const Sidebar = () => {
+interface Props {
+  role: string;
+}
+
+const Sidebar = ({ role }: Props) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {

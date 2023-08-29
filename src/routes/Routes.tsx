@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PrivateRoutesLayout from "../layouts/PrivateRoutesLayout";
 import Dashboard from "../pages/Dashboard";
-import Registers from "../pages/Registers";
+import Registers from "../pages/UserRegisters";
 import Home from "../pages/Home copy";
 import Login from "../pages/Login";
 
