@@ -2,6 +2,7 @@ import { Box, Button, Image, List, ListItem } from "@chakra-ui/react";
 import RegistersIcon from "../../assets/icon-registers.svg";
 import LogoutIcon from "../../assets/icon-logout.svg";
 import Logo from "../../assets/logo-pontogo-blue.svg";
+import { useMediaQuery } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -10,6 +11,8 @@ interface Props {
 }
 
 const Sidebar = ({ role }: Props) => {
+  const [isMobile] = useMediaQuery("(max-width: 770px)");
+  console.log(isMobile);
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -23,7 +26,7 @@ const Sidebar = ({ role }: Props) => {
         as="aside"
         display="flex"
         flexDirection="column"
-        w="11.25rem"
+        w={{ base: "4.5rem", md: "11.25rem" }}
         bg="pure-white"
         boxShadow=" 0px 4px 10px 0px rgba(0, 0, 0, 0.10)"
       >
@@ -41,24 +44,24 @@ const Sidebar = ({ role }: Props) => {
           >
             <ListItem _hover={{ cursor: "pointer" }} display="flex" gap=".6rem">
               <Box>
-                <Image src={RegistersIcon} />
+                <Image w="20px" height="20px" src={RegistersIcon} />
               </Box>
-              Registros
+              {!isMobile && "Registros"}
             </ListItem>
           </List>
         </Box>
         <Button
-          fontSize="sm"
+          fontSize={{ base: "xs", sm: "sm" }}
           bg="none"
-          justifyContent="start"
+          justifyContent={{ base: "center", sm: "start" }}
           gap="1rem"
           fontWeight="400"
           p="1.25rem"
           color="dark-grey"
           onClick={handleLogout}
         >
-          <Image src={LogoutIcon} />
-          Sair
+          <Image w={{ base: "15px", sm: "25px" }} src={LogoutIcon} />
+          {!isMobile && "Sair"}
         </Button>
       </Box>
     </>

@@ -8,11 +8,13 @@ const RegistersList = ({
   registeredTimes: GetCurrentUserRegisteredTimesQuery;
 }) => {
   return (
-    <List>
-      {registeredTimes.registeredTimes?.map((item) => {
+    <List display="flex" flexDirection="column" gap="1rem">
+      {registeredTimes.registeredTimes?.map((item, index) => {
         return (
           <RegisterItem
-            userName={item!.user!.username}
+            key={index}
+            id={item!.id}
+            userName={item!.user!.name!}
             date={item?.timeRegistered}
           />
         );

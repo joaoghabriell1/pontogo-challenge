@@ -16,13 +16,15 @@ export const LOAD_USERS = graphql(`
 `);
 
 export const LOAD_CURRENT_USER_REGISTERS = graphql(`
-  query GetCurrentUserRegisteredTimes($userId: ID!) {
-    registeredTimes(where: { user: { id: $userId } }) {
+  query GetCurrentUserRegisteredTimes($userId: ID!, $limit: Int) {
+    registeredTimes(limit: $limit, where: { user: { id: $userId } }) {
       id
       created_at
       timeRegistered
       published_at
       user {
+        name
+        id
         username
         email
       }
