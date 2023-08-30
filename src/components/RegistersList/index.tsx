@@ -3,8 +3,6 @@ import { List } from "@chakra-ui/react";
 import { RegisteredTimesQuery } from "../../../gql/graphql";
 import { GetCurrentUserRegisteredTimesQuery } from "../../../gql/graphql";
 
-const limit = 6;
-
 const RegistersList = ({
   data,
 }: {
