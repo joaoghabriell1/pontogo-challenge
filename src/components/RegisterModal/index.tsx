@@ -18,7 +18,10 @@ const RegisterModal = ({ isOpen, onClose }: Props) => {
   return (
     <>
       <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
+        <ModalOverlay
+          opacity="rgba(32, 41, 46, .2)"
+          sx={{ backdropFilter: "blur(3px)" }}
+        />
         <ModalContent>
           <Flex
             p={{ base: "3.25rem 5.75rem" }}

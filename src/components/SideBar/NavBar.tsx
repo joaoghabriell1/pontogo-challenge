@@ -25,7 +25,7 @@ const NavBar = ({ role }: Props) => {
               <Image w="20px" height="20px" src={DashBoardIcon} />
             )}
           </Box>
-          {!isMobile && role === "user" && "Registros"}
+          {!isMobile && role === "user" && "Meus Registros"}
           {!isMobile && role === "admin" && "Dashboard"}
         </ListItem>
       </List>

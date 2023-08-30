@@ -3,9 +3,9 @@ import { GET_CURRENT_USER } from "../api/queries";
 import Sidebar from "../components/SideBar";
 import { useLocation } from "react-router";
 import { useQuery } from "@apollo/client";
+import { Outlet as OutletType } from "../types/Outlet";
 import { Navigate } from "react-router";
 import { Outlet } from "react-router";
-
 const PrivateRoutesLayout = () => {
   const {
     loading,
@@ -40,12 +40,15 @@ const PrivateRoutesLayout = () => {
     return <p>Você nssão possui permissão para acessar essa página</p>;
   }
 
+  const context: OutletType = {
+    id: currentUserId!,
+  };
   return (
     <>
       <Container p="0" maxW="100%" h="100vh">
         <Flex h="100%">
           <Sidebar role={currentUserRole!} />
-          <Outlet context={{ id: currentUserId }} />
+          <Outlet context={context} />
         </Flex>
       </Container>
     </>
