@@ -22,16 +22,16 @@ Para rodar o repositório, siga os seguintes passos::
 git clone https://github.com/joaoghabriell1/pontogo-challenge.git
 ```
 
-*Instale as dependências necessárias:
+* Instale as dependências necessárias:
 ```
 npm install
 ```
-*Para --:
+* Para --:
 ```
 npm run codegen
 ```
 
-*Para rodar o projeto:
+* Para rodar o projeto:
 ```
 npm run dev
 ```
