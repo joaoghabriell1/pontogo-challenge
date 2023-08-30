@@ -39,6 +39,7 @@ const RegisterItem = ({ userName, date }: Props) => {
         pl={{ base: "1rem", md: "2.5rem" }}
         pr={{ base: "1rem", sm: "none" }}
         minW={{ base: "min-content", sm: "8.5rem", md: "15.5rem" }}
+        whiteSpace="nowrap"
       >
         {userName}
       </Box>

@@ -1,13 +1,16 @@
 import { graphql } from "../../gql";
 
-export const LOAD_USERS = graphql(`
-  query registeredTimes($sort: String) {
-    registeredTimes(sort: $sort) {
+export const GET_ALL_REGISTERED_TIMES = graphql(`
+  query registeredTimes($sort: String, $limit: Int, $start: Int) {
+    registeredTimes(sort: $sort, limit: $limit, start: $start) {
+      id
       created_at
       updated_at
       timeRegistered
       user {
+        name
         id
+        username
         email
       }
       published_at

@@ -17,12 +17,18 @@ const NavBar = ({ role }: Props) => {
         p="2.5rem 1.5rem"
         color="main-color"
       >
-        <ListItem _hover={{ cursor: "pointer" }} display="flex" gap=".6rem">
+        <ListItem
+          fontSize=".825rem"
+          alignItems="center"
+          _hover={{ cursor: "pointer" }}
+          display="flex"
+          gap=".6rem"
+        >
           <Box>
             {role === "user" ? (
-              <Image w="20px" height="20px" src={RegistersIcon} />
+              <Image minW="18px" height="19px" src={RegistersIcon} />
             ) : (
-              <Image w="20px" height="20px" src={DashBoardIcon} />
+              <Image minW="18px" height="19px" src={DashBoardIcon} />
             )}
           </Box>
           {!isMobile && role === "user" && "Meus Registros"}

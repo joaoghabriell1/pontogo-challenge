@@ -1,33 +1,60 @@
 import { List, ListItem, Flex, Button } from "@chakra-ui/react";
-import { LOAD_CURRENT_USER_REGISTERS } from "../../../api/queries";
-import { useQuery } from "@apollo/client";
 import ArrowButton from "./ArrowButton";
+import { RegisteredTimesQuery } from "../../../../gql/graphql";
+import { GetCurrentUserRegisteredTimesQuery } from "../../../../gql/graphql";
 
 interface Props {
-  id: string;
   page: number;
-  onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  data: RegisteredTimesQuery | GetCurrentUserRegisteredTimesQuery | undefined;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const RegistersListFooter = ({ id, page, onClick }: Props) => {
-  const { data, loading, error } = useQuery(LOAD_CURRENT_USER_REGISTERS, {
-    variables: {
-      userId: id,
-    },
-  });
-
+const RegistersListFooter = ({ page, data, setPage }: Props) => {
   let numOfPages: number | undefined;
   let array: number[] | undefined;
 
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const { value, innerText } = e.currentTarget;
+    if (value === "next") {
+      setPage((prev) => {
+        const nextPage = prev + 1;
+        return nextPage;
+      });
+    }
+    if (value === "previous") {
+      if (page == 1) {
+        return;
+      }
+      setPage((prev) => {
+        const previousPage = prev - 1;
+        return previousPage;
+      });
+    }
+    if (value === "toPage") {
+      setPage(+innerText);
+    }
+  };
+
   if (data) {
-    numOfPages = Math.ceil(data?.registeredTimes?.length! / 6);
+    numOfPages = Math.floor(data?.registeredTimes?.length! / 6);
     array = new Array(numOfPages).fill(1);
   }
 
   return (
     <Flex mt="1.25rem">
-      <ArrowButton value="previous" page={page} onClick={onClick} />
-      <List mx="0.30rem" display="flex" gap=".30rem">
+      <ArrowButton
+        value="previous"
+        page={page}
+        numOfpages={numOfPages!}
+        onClick={handleClick}
+      />
+      <List
+        maxW={{ base: "170px", sm: "none" }}
+        overflowX={{ base: "scroll", sm: "initial" }}
+        mx="0.30rem"
+        display="flex"
+        gap=".30rem"
+      >
         {numOfPages &&
           array?.map((num, index) => {
             return (
@@ -38,19 +65,19 @@ const RegistersListFooter = ({ id, page, onClick }: Props) => {
                 }
                 opacity="0.5"
                 aspectRatio="1/1"
-                h="1.875rem"
+                h={{ base: "1rem", sm: "1.875rem" }}
                 key={index}
                 display="flex"
                 justifyContent="center"
                 alignItems="center"
               >
                 <Button
-                  fontSize="0.875rem"
+                  fontSize={{ base: ".4rem", sm: "0.875rem" }}
                   fontWeight="400"
                   bg="none"
                   _hover={{ bg: "none" }}
                   value="toPage"
-                  onClick={onClick}
+                  onClick={handleClick}
                 >
                   {index + 1}
                 </Button>
@@ -58,7 +85,12 @@ const RegistersListFooter = ({ id, page, onClick }: Props) => {
             );
           })}
       </List>
-      <ArrowButton value="next" page={page} onClick={onClick} />
+      <ArrowButton
+        numOfpages={numOfPages}
+        value="next"
+        page={page}
+        onClick={handleClick}
+      />
     </Flex>
   );
 };

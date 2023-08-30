@@ -6,22 +6,29 @@ interface Props {
   value: string;
   onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   page: number;
+  numOfpages?: number;
 }
-const ArrowButton = ({ value, onClick, page }: Props) => {
+const ArrowButton = ({ value, onClick, page, numOfpages }: Props) => {
+  console.log(page, numOfpages);
+
   return (
     <Button
+      disabled={numOfpages === page}
       borderRadius="0.125rem"
       opacity="0.5"
       border="0.5px solid #20292E"
       display="flex"
       justifyContent="center"
       alignItems="center"
-      onClick={onClick}
+      onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        if (page == numOfpages && value === "next") return;
+        onClick(e);
+      }}
       value={value}
       p="0"
-      height="1.875rem"
-      minW="1.875rem"
-      w="1.875rem"
+      h={{ base: "1rem", sm: "1.875rem" }}
+      minW={{ base: "1rem", sm: "1.875rem" }}
+      w={{ base: "1rem", sm: "1.875rem" }}
       bg="none"
     >
       {value === "previous" && <Image minW="0.937rem" src={LeftArrow} />}

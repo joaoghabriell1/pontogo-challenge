@@ -1,20 +1,29 @@
-import { GetCurrentUserRegisteredTimesQuery } from "../../../gql/graphql";
 import RegisterItem from "./RegisterItem";
 import { List } from "@chakra-ui/react";
+import { RegisteredTimesQuery } from "../../../gql/graphql";
+import { GetCurrentUserRegisteredTimesQuery } from "../../../gql/graphql";
+
+const limit = 6;
 
 const RegistersList = ({
-  registeredTimes,
+  data,
 }: {
-  registeredTimes: GetCurrentUserRegisteredTimesQuery;
+  data: RegisteredTimesQuery | GetCurrentUserRegisteredTimesQuery;
 }) => {
+  console.log(data);
   return (
-    <List display="flex" flexDirection="column" gap="1rem">
-      {registeredTimes.registeredTimes?.map((item, index) => {
+    <List
+      minH={{ base: "min-content", sm: "480px" }}
+      display="flex"
+      flexDirection="column"
+      gap="1rem"
+    >
+      {data?.registeredTimes?.map((item, index) => {
         return (
           <RegisterItem
             key={index}
             id={item!.id}
-            userName={item!.user!.name!}
+            userName={item?.user?.name!}
             date={item?.timeRegistered}
           />
         );

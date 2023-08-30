@@ -1,6 +1,6 @@
 /* eslint-disable */
-import * as types from './graphql';
-import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
+import * as types from "./graphql";
+import { TypedDocumentNode as DocumentNode } from "@graphql-typed-document-node/core";
 
 /**
  * Map of all GraphQL operations in the project.
@@ -13,11 +13,16 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-    "\n  mutation LoginUser($input: UsersPermissionsLoginInput!) {\n    login(input: $input) {\n      jwt\n      user {\n        id\n        username\n        email\n        confirmed\n        blocked\n        role {\n          id\n          name\n          description\n          type\n        }\n      }\n    }\n  }\n": types.LoginUserDocument,
-    "\n  mutation createRegisteredTime($input: createRegisteredTimeInput) {\n    createRegisteredTime(input: $input) {\n      registeredTime {\n        id\n        created_at\n        updated_at\n        timeRegistered\n        user {\n          id\n          email\n        }\n        published_at\n      }\n    }\n  }\n": types.CreateRegisteredTimeDocument,
-    "\n  query registeredTimes($sort: String) {\n    registeredTimes(sort: $sort) {\n      created_at\n      updated_at\n      timeRegistered\n      user {\n        id\n        email\n      }\n      published_at\n    }\n  }\n": types.RegisteredTimesDocument,
-    "\n  query GetCurrentUserRegisteredTimes($userId: ID!, $limit: Int, $start: Int) {\n    registeredTimes(\n      limit: $limit\n      start: $start\n      where: { user: { id: $userId } }\n    ) {\n      id\n      created_at\n      timeRegistered\n      published_at\n      user {\n        name\n        id\n        username\n        email\n      }\n    }\n  }\n": types.GetCurrentUserRegisteredTimesDocument,
-    "\n  query GetCurrentUser {\n    me {\n      id\n      username\n      email\n      confirmed\n      blocked\n      role {\n        id\n        name\n        description\n      }\n    }\n  }\n": types.GetCurrentUserDocument,
+  "\n  mutation LoginUser($input: UsersPermissionsLoginInput!) {\n    login(input: $input) {\n      jwt\n      user {\n        id\n        username\n        email\n        confirmed\n        blocked\n        role {\n          id\n          name\n          description\n          type\n        }\n      }\n    }\n  }\n":
+    types.LoginUserDocument,
+  "\n  mutation createRegisteredTime($input: createRegisteredTimeInput) {\n    createRegisteredTime(input: $input) {\n      registeredTime {\n        id\n        created_at\n        updated_at\n        timeRegistered\n        user {\n          id\n          email\n        }\n        published_at\n      }\n    }\n  }\n":
+    types.CreateRegisteredTimeDocument,
+  "\n  query registeredTimes($sort: String, $limit: Int, $start: Int) {\n    registeredTimes(sort: $sort, limit: $limit, start: $start) {\n      id\n      created_at\n      updated_at\n      timeRegistered\n      user {\n        name\n        id\n        username\n        email\n      }\n      published_at\n    }\n  }\n":
+    types.RegisteredTimesDocument,
+  "\n  query GetCurrentUserRegisteredTimes($userId: ID!, $limit: Int, $start: Int) {\n    registeredTimes(\n      limit: $limit\n      start: $start\n      where: { user: { id: $userId } }\n    ) {\n      id\n      created_at\n      timeRegistered\n      published_at\n      user {\n        name\n        id\n        username\n        email\n      }\n    }\n  }\n":
+    types.GetCurrentUserRegisteredTimesDocument,
+  "\n  query GetCurrentUser {\n    me {\n      id\n      username\n      email\n      confirmed\n      blocked\n      role {\n        id\n        name\n        description\n      }\n    }\n  }\n":
+    types.GetCurrentUserDocument,
 };
 
 /**
@@ -37,26 +42,37 @@ export function graphql(source: string): unknown;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  mutation LoginUser($input: UsersPermissionsLoginInput!) {\n    login(input: $input) {\n      jwt\n      user {\n        id\n        username\n        email\n        confirmed\n        blocked\n        role {\n          id\n          name\n          description\n          type\n        }\n      }\n    }\n  }\n"): (typeof documents)["\n  mutation LoginUser($input: UsersPermissionsLoginInput!) {\n    login(input: $input) {\n      jwt\n      user {\n        id\n        username\n        email\n        confirmed\n        blocked\n        role {\n          id\n          name\n          description\n          type\n        }\n      }\n    }\n  }\n"];
+export function graphql(
+  source: "\n  mutation LoginUser($input: UsersPermissionsLoginInput!) {\n    login(input: $input) {\n      jwt\n      user {\n        id\n        username\n        email\n        confirmed\n        blocked\n        role {\n          id\n          name\n          description\n          type\n        }\n      }\n    }\n  }\n"
+): (typeof documents)["\n  mutation LoginUser($input: UsersPermissionsLoginInput!) {\n    login(input: $input) {\n      jwt\n      user {\n        id\n        username\n        email\n        confirmed\n        blocked\n        role {\n          id\n          name\n          description\n          type\n        }\n      }\n    }\n  }\n"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  mutation createRegisteredTime($input: createRegisteredTimeInput) {\n    createRegisteredTime(input: $input) {\n      registeredTime {\n        id\n        created_at\n        updated_at\n        timeRegistered\n        user {\n          id\n          email\n        }\n        published_at\n      }\n    }\n  }\n"): (typeof documents)["\n  mutation createRegisteredTime($input: createRegisteredTimeInput) {\n    createRegisteredTime(input: $input) {\n      registeredTime {\n        id\n        created_at\n        updated_at\n        timeRegistered\n        user {\n          id\n          email\n        }\n        published_at\n      }\n    }\n  }\n"];
+export function graphql(
+  source: "\n  mutation createRegisteredTime($input: createRegisteredTimeInput) {\n    createRegisteredTime(input: $input) {\n      registeredTime {\n        id\n        created_at\n        updated_at\n        timeRegistered\n        user {\n          id\n          email\n        }\n        published_at\n      }\n    }\n  }\n"
+): (typeof documents)["\n  mutation createRegisteredTime($input: createRegisteredTimeInput) {\n    createRegisteredTime(input: $input) {\n      registeredTime {\n        id\n        created_at\n        updated_at\n        timeRegistered\n        user {\n          id\n          email\n        }\n        published_at\n      }\n    }\n  }\n"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  query registeredTimes($sort: String) {\n    registeredTimes(sort: $sort) {\n      created_at\n      updated_at\n      timeRegistered\n      user {\n        id\n        email\n      }\n      published_at\n    }\n  }\n"): (typeof documents)["\n  query registeredTimes($sort: String) {\n    registeredTimes(sort: $sort) {\n      created_at\n      updated_at\n      timeRegistered\n      user {\n        id\n        email\n      }\n      published_at\n    }\n  }\n"];
+export function graphql(
+  source: "\n  query registeredTimes($sort: String, $limit: Int, $start: Int) {\n    registeredTimes(sort: $sort, limit: $limit, start: $start) {\n      id\n      created_at\n      updated_at\n      timeRegistered\n      user {\n        name\n        id\n        username\n        email\n      }\n      published_at\n    }\n  }\n"
+): (typeof documents)["\n  query registeredTimes($sort: String, $limit: Int, $start: Int) {\n    registeredTimes(sort: $sort, limit: $limit, start: $start) {\n      id\n      created_at\n      updated_at\n      timeRegistered\n      user {\n        name\n        id\n        username\n        email\n      }\n      published_at\n    }\n  }\n"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  query GetCurrentUserRegisteredTimes($userId: ID!, $limit: Int, $start: Int) {\n    registeredTimes(\n      limit: $limit\n      start: $start\n      where: { user: { id: $userId } }\n    ) {\n      id\n      created_at\n      timeRegistered\n      published_at\n      user {\n        name\n        id\n        username\n        email\n      }\n    }\n  }\n"): (typeof documents)["\n  query GetCurrentUserRegisteredTimes($userId: ID!, $limit: Int, $start: Int) {\n    registeredTimes(\n      limit: $limit\n      start: $start\n      where: { user: { id: $userId } }\n    ) {\n      id\n      created_at\n      timeRegistered\n      published_at\n      user {\n        name\n        id\n        username\n        email\n      }\n    }\n  }\n"];
+export function graphql(
+  source: "\n  query GetCurrentUserRegisteredTimes($userId: ID!, $limit: Int, $start: Int) {\n    registeredTimes(\n      limit: $limit\n      start: $start\n      where: { user: { id: $userId } }\n    ) {\n      id\n      created_at\n      timeRegistered\n      published_at\n      user {\n        name\n        id\n        username\n        email\n      }\n    }\n  }\n"
+): (typeof documents)["\n  query GetCurrentUserRegisteredTimes($userId: ID!, $limit: Int, $start: Int) {\n    registeredTimes(\n      limit: $limit\n      start: $start\n      where: { user: { id: $userId } }\n    ) {\n      id\n      created_at\n      timeRegistered\n      published_at\n      user {\n        name\n        id\n        username\n        email\n      }\n    }\n  }\n"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  query GetCurrentUser {\n    me {\n      id\n      username\n      email\n      confirmed\n      blocked\n      role {\n        id\n        name\n        description\n      }\n    }\n  }\n"): (typeof documents)["\n  query GetCurrentUser {\n    me {\n      id\n      username\n      email\n      confirmed\n      blocked\n      role {\n        id\n        name\n        description\n      }\n    }\n  }\n"];
+export function graphql(
+  source: "\n  query GetCurrentUser {\n    me {\n      id\n      username\n      email\n      confirmed\n      blocked\n      role {\n        id\n        name\n        description\n      }\n    }\n  }\n"
+): (typeof documents)["\n  query GetCurrentUser {\n    me {\n      id\n      username\n      email\n      confirmed\n      blocked\n      role {\n        id\n        name\n        description\n      }\n    }\n  }\n"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};
 }
 
-export type DocumentType<TDocumentNode extends DocumentNode<any, any>> = TDocumentNode extends DocumentNode<  infer TType,  any>  ? TType  : never;
+export type DocumentType<TDocumentNode extends DocumentNode<any, any>> =
+  TDocumentNode extends DocumentNode<infer TType, any> ? TType : never;
