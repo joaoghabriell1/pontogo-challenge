@@ -1,35 +1,39 @@
-<h1 align="center">:file_cabinet: Exemplo de README.md</h1>
+<h1 align="center">:file_cabinet: PontoGo Challenge</h1>
 
 ## :memo: Descrição
-Escreva uma descrição do seu projeto
+O
 
 ## :books: Funcionalidades
 * <b>Funcionalidade 1</b>: O que essa funcionalidade faz?
 
 ## :wrench: Tecnologias utilizadas
-* Tecnologia;
+
+* React;
+* Typescript;
+* Apollo-client;
+* ChakraUI;
+* React-router;
 
 ## :rocket: Rodando o projeto
-Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando para iniciar o projeto:
+Para rodar o repositório, siga os seguintes passos::
+
+* Clone o projeto:
 ```
-<linha de comando>
+git clone https://github.com/joaoghabriell1/pontogo-challenge.git
 ```
 
-## :soon: Implementação futura
-* O que será implementado na próxima sprint?
+*Instale as dependências necessárias:
+```
+npm install
+```
+*Para --:
+```
+npm run codegen
+```
 
-## :handshake: Colaboradores
-<table>
-  <tr>
-    <td align="center">
-      <a href="http://github.com/tatialveso">
-        <img src="https://avatars.githubusercontent.com/u/56259137?v=4" width="100px;" alt="Foto de Tati Alves no GitHub"/><br>
-        <sub>
-          <b>tatialveso</b>
-        </sub>
-      </a>
-    </td>
-  </tr>
-</table>
+*Para rodar o projeto:
+```
+npm run dev
+```
 
-## :dart: Status do projeto
+
