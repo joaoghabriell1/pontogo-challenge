@@ -10,7 +10,7 @@ interface Props {
 }
 
 const AllRegistersList = ({ id, page, setPage }: Props) => {
-  const { data, loading, error } = useQuery(GET_ALL_REGISTERED_TIMES, {
+  const { data } = useQuery(GET_ALL_REGISTERED_TIMES, {
     variables: {},
   });
 

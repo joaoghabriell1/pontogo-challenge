@@ -10,7 +10,7 @@ interface Props {
 }
 
 const CurrentUserRegistersListFooter = ({ id, page, setPage }: Props) => {
-  const { data, loading, error } = useQuery(LOAD_CURRENT_USER_REGISTERS, {
+  const { data } = useQuery(LOAD_CURRENT_USER_REGISTERS, {
     variables: {
       userId: id,
     },

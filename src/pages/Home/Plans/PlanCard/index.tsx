@@ -1,5 +1,4 @@
 import { Card, Box } from "@chakra-ui/react";
-import { motion } from "framer-motion";
 import Header from "./Header";
 import BenefitsList from "./BenefitsList";
 import { Plan } from "../plans";
