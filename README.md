@@ -7,6 +7,7 @@ O PontoGo permite que o usuário faça logIn na sua conte registre o seu ponto d
 
 * Node v16.16.0
 * NPM v9.8.1
+* Vite
 
 
 ## :wrench: Tecnologias utilizadas
