@@ -8,8 +8,7 @@ const Content = () => {
       <Box
         color="pure-white"
         pt={{ base: "0rem", lg: "2rem" }}
-        textAlign={{ base: "center", lg: "start" }}
-      >
+        textAlign={{ base: "center", lg: "start" }}>
         <Heading
           fontWeight="300"
           as="h3"
@@ -17,8 +16,7 @@ const Content = () => {
           letterSpacing="0.2475rem"
           textTransform="uppercase"
           opacity=".9"
-          fontSize="xl"
-        >
+          fontSize="xl">
           esquece o ponto manual
         </Heading>
         <Heading
@@ -28,8 +26,7 @@ const Content = () => {
           fontFamily="inherit"
           opacity=".9"
           lineHeight="3.8rem"
-          my="1.3rem"
-        >
+          my="1.3rem">
           Chegou a nova realidade para{" "}
           <Box as="span" color="secondary-color">
             Controle de Pontos
@@ -40,8 +37,7 @@ const Content = () => {
           maxW="42ch"
           fontSize="md"
           mx={{ base: "auto", lg: "0" }}
-          textAlign={{ base: "center", lg: "start" }}
-        >
+          textAlign={{ base: "center", lg: "start" }}>
           Com o PontoGo seus colaboradores poderão bater seus pontos de forma
           fácil e rápida, possuindo também uma Dashboard intuitiva.
         </Text>

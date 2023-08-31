@@ -8,8 +8,7 @@ const HeroSection = () => {
       <Flex
         alignItems={{ base: "center" }}
         mt="2.5rem"
-        direction={{ base: "column-reverse", lg: "row" }}
-      >
+        direction={{ base: "column-reverse", lg: "row" }}>
         <Content />
         <HeroIcon />
       </Flex>

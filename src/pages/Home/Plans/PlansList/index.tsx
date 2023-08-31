@@ -1,6 +1,6 @@
 import RightArrow from "../../../../assets/icon-right-arrow.svg";
 import LeftArrow from "../../../../assets/icon-left-arrow.svg";
-import { HStack, Image, Flex } from "@chakra-ui/react";
+import { HStack, Image, Flex, Button } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import PlanCard from "../PlanCard";
 import { useState } from "react";
@@ -52,7 +52,11 @@ const PlansList = () => {
 
   return (
     <>
-      <Flex id="plans" align="center" justify="center">
+      <Flex
+        mx={{ base: "0", sm: "5.5rem" }}
+        id="plans"
+        align="center"
+        justify="center">
         <motion.button
           whileHover={{
             scale: "1.4",
