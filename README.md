@@ -1,4 +1,4 @@
-<h1 align="center">:file_cabinet: PontoGo Challenge</h1>
+<h1 align="center">PontoGo</h1>
 
 ## :memo: Descrição
 O PontoGo permite que o usuário faça login na sua conta e registre o seu ponto de forma fácil e rápida.
