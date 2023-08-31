@@ -1,4 +1,4 @@
-import { List, ListItem, Image, Flex } from "@chakra-ui/react";
+import { List, ListItem, Image, Flex, Text } from "@chakra-ui/react";
 import CheckIcon from "../../../../assets/icon-check.svg";
 import IconClose from "../../../../assets/icon-close.svg";
 
@@ -12,18 +12,17 @@ const BenefitsList = ({ benefits }: Props) => {
   return (
     <List
       mt="1.25rem"
-      sx={{ display: "flex", gap: ".8rem", "flex-direction": "column" }}
-    >
+      sx={{ display: "flex", gap: ".8rem", "flex-direction": "column" }}>
       {benefits.map(({ available, body }, index) => {
         return (
-          <ListItem key={index} fontWeight="300">
-            <Flex opacity={available ? "1" : ".3"} align="center" gap=".6rem">
+          <ListItem whiteSpace="nowrap" key={index} fontWeight="300">
+            <Flex align="center" gap=".6rem">
               <Image
                 w="1rem"
                 src={available ? CheckIcon : IconClose}
                 alt="check iconc"
               />
-              {body}
+              <Text opacity={available ? "1" : ".3"}>{body}</Text>
             </Flex>
           </ListItem>
         );

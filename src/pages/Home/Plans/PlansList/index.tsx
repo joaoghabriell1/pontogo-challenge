@@ -61,8 +61,7 @@ const PlansList = () => {
             scale: "1.5",
           }}
           value="left"
-          onClick={handleClick}
-        >
+          onClick={handleClick}>
           <Image minW="2rem" src={LeftArrow} />
         </motion.button>
         <HStack
@@ -70,8 +69,7 @@ const PlansList = () => {
           padding=".3rem"
           mx="auto"
           overflowX="hidden"
-          justify="center"
-        >
+          justify="center">
           {plansOrder.map((num, index) => {
             const plan = plans.find((plan) => plan.id == num);
             return (
@@ -92,8 +90,7 @@ const PlansList = () => {
             scale: "1.6",
           }}
           value="right"
-          onClick={handleClick}
-        >
+          onClick={handleClick}>
           <Image minW="2rem" src={RightArrow} />
         </motion.button>
       </Flex>

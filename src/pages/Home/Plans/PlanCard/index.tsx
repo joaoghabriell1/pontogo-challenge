@@ -27,8 +27,8 @@ const PlanCard = ({ selected, plan, position }: Props) => {
       minW={{ base: "17rem", sm: "20rem" }}
       ml={selected ? "-3.5rem" : "0rem"}
       mr={selected ? "-3.5rem" : "0rem"}
-      opacity={selected ? "1" : ".3"}
-    >
+      maxW="330px"
+      opacity={selected ? "1" : ".3"}>
       <Header header={plan.heading} />
       <BenefitsList benefits={plan.benefits} />
       <Box mt="1.8rem" display={selected ? "flex" : "none"}>
