@@ -20,7 +20,7 @@ O PontoGo permite que o usuário faça login na sua conta e registre o seu ponto
 * [React Router](https://reactrouter.com/en/main) - Para o controle de rotas e layouts da aplicação;
 
 ## :rocket: Rodando o projeto
-Para rodar o repositório, siga os seguintes passos::
+Para rodar o repositório, siga os seguintes passos:
 
 * Clone o projeto:
 ```
