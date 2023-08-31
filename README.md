@@ -42,7 +42,7 @@ npm run dev
 ```
 npm run codegen
 ```
-## :globe_with_meridians: Deploy do site
+## :globe_with_meridians: Deploy do projeto
 * [PontoGo](https://pontogo-challenge.vercel.app/)
 
 
