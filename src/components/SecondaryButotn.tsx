@@ -13,7 +13,7 @@ const SecondaryButton = ({ onClick, text }: Props) => {
       fontSize={{ base: "xsm", md: "sm" }}
       bg="main-color"
       fontWeight="400"
-      padding={{ base: "", sm: ".8rem 2.5rem" }}
+      padding={{ base: "", sm: "1.5rem 2.5rem" }}
       color="pure-white"
       onClick={onClick}
     >

@@ -17,7 +17,7 @@ const UserRegisters = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box p="2.5rem 1.8rem 5.5rem 1.8rem" flex="1">
+    <Box bg="#F2F2F2;" p="2.5rem 1.8rem 5.5rem 1.8rem" flex="1">
       <RegisterModal isOpen={isOpen} onClose={onClose} />
       <RegisterButton text="Registrar ponto" onClick={onOpen} />
       <RegistersListHeader />

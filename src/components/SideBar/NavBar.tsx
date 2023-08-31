@@ -14,19 +14,19 @@ const NavBar = ({ role }: Props) => {
       <List
         borderLeft="4px solid rgba(51, 6, 147, 1)"
         borderBlock="1px solid rgba(10, 9, 9, 0.08)"
-        p="2.5rem 1.5rem"
+        p="2.5rem 1.25rem"
         color="main-color"
       >
         <ListItem
-          fontSize=".825rem"
+          fontSize=".875rem"
           alignItems="center"
           _hover={{ cursor: "pointer" }}
           display="flex"
-          gap=".6rem"
+          gap=".4rem"
         >
           <Box>
             {role === "user" ? (
-              <Image minW="18px" height="19px" src={RegistersIcon} />
+              <Image minW="18px" height="1.5rem" src={RegistersIcon} />
             ) : (
               <Image minW="18px" height="19px" src={DashBoardIcon} />
             )}

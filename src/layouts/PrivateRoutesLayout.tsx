@@ -1,11 +1,14 @@
+import { Outlet as OutletType } from "../types/Outlet";
 import { Container, Flex } from "@chakra-ui/react";
 import { GET_CURRENT_USER } from "../api/queries";
 import Sidebar from "../components/SideBar";
 import { useLocation } from "react-router";
 import { useQuery } from "@apollo/client";
-import { Outlet as OutletType } from "../types/Outlet";
 import { Navigate } from "react-router";
 import { Outlet } from "react-router";
+import NotAllowed from "./NotAllowed";
+import Loading from "./Loading";
+
 const PrivateRoutesLayout = () => {
   const {
     loading,
@@ -21,7 +24,7 @@ const PrivateRoutesLayout = () => {
   const { pathname } = useLocation();
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <Loading />;
   }
 
   if (!userIsLoggedIn) {
@@ -33,11 +36,11 @@ const PrivateRoutesLayout = () => {
   }
 
   if (pathname === "/dashboard" && currentUserRole !== "admin") {
-    return <p>Você não possui permissão para acessar essa página</p>;
+    return <NotAllowed />;
   }
 
   if (pathname === "/meus-registros" && currentUserRole !== "user") {
-    return <p>Você nssão possui permissão para acessar essa página</p>;
+    return <NotAllowed />;
   }
 
   const context: OutletType = {

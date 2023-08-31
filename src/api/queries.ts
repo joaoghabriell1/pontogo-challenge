@@ -19,15 +19,21 @@ export const GET_ALL_REGISTERED_TIMES = graphql(`
 `);
 
 export const LOAD_CURRENT_USER_REGISTERS = graphql(`
-  query GetCurrentUserRegisteredTimes($userId: ID!, $limit: Int, $start: Int) {
+  query GetCurrentUserRegisteredTimes(
+    $userId: ID!
+    $limit: Int
+    $start: Int
+    $sort: String
+  ) {
     registeredTimes(
+      sort: $sort
       limit: $limit
       start: $start
       where: { user: { id: $userId } }
     ) {
       id
-      created_at
       timeRegistered
+      created_at
       published_at
       user {
         name

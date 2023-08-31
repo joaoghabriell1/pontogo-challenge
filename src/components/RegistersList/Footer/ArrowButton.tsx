@@ -9,8 +9,6 @@ interface Props {
   numOfpages?: number;
 }
 const ArrowButton = ({ value, onClick, page, numOfpages }: Props) => {
-  console.log(page, numOfpages);
-
   return (
     <Button
       disabled={numOfpages === page}

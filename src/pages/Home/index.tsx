@@ -11,8 +11,9 @@ const Home = () => {
     <>
       <Box
         minH="100vh"
-        bgColor="#1b0055"
         bgImage="url('src/assets/bg-image-1.png')"
+        bgRepeat="no-repeat"
+        bgSize="cover"
         overflowX="hidden"
       >
         <Container maxW="1200px" px={{ base: "1rem", xl: "0rem" }}>

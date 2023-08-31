@@ -14,6 +14,7 @@ const RegisterItem = ({ userName, date }: Props) => {
 
   return (
     <ListItem
+      bg="pure-white"
       border="1px solid  rgba(32, 41, 46, 0.30)"
       borderRadius="0.3125rem"
       p="1rem"

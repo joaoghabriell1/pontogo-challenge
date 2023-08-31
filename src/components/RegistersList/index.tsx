@@ -2,13 +2,13 @@ import RegisterItem from "./RegisterItem";
 import { List } from "@chakra-ui/react";
 import { RegisteredTimesQuery } from "../../../gql/graphql";
 import { GetCurrentUserRegisteredTimesQuery } from "../../../gql/graphql";
+import { RegisteredTime } from "../../../gql/graphql";
 
 const RegistersList = ({
   data,
 }: {
   data: RegisteredTimesQuery | GetCurrentUserRegisteredTimesQuery;
 }) => {
-  console.log(data);
   return (
     <List
       minH={{ base: "min-content", sm: "480px" }}

@@ -1,5 +1,6 @@
 import { Input, Image, FormLabel, Link, Box } from "@chakra-ui/react";
 import EyeIcon from "../../../assets/icon-eye.svg";
+import ClosedEyeIcon from "../../../assets/icon-closed-eye.svg";
 import { useState } from "react";
 
 interface Props {
@@ -17,6 +18,17 @@ const PasswordInput = ({
   placeHolder,
   onChange,
 }: Props) => {
+  const [type, setType] = useState<"password" | "text">("password");
+
+  const handleInputType = () => {
+    setType((prev) => {
+      if (prev === "password") {
+        return "text";
+      }
+      return "password";
+    });
+  };
+
   return (
     <>
       <Box mb=".5rem" position="relative">
@@ -32,9 +44,18 @@ const PasswordInput = ({
           onChange={onChange}
           name={name}
           value={value}
-          type="password"
+          type={type}
         />
-        <Image top="2.2rem" right=".5rem" position="absolute" src={EyeIcon} />
+        <button onClick={handleInputType} type="button">
+          <Image
+            top="2.2rem"
+            zIndex="3"
+            right=".5rem"
+            position="absolute"
+            maxW="1.5rem"
+            src={type === "password" ? EyeIcon : ClosedEyeIcon}
+          />
+        </button>
       </Box>
       <Link fontSize="0.93rem" color="main-color" textDecoration="underline">
         Esqueci minha senha

@@ -1,6 +1,4 @@
 import ClockImage from "../../assets/image-clock.svg";
-import { formatDate } from "../../utils/formatDate";
-import { formatTime } from "../../utils/formatTime";
 import { ModalBody } from "@chakra-ui/react";
 import { Image, Flex, Box } from "@chakra-ui/react";
 

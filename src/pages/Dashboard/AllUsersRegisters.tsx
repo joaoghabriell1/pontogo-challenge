@@ -6,6 +6,7 @@ const limit = 6;
 const AllUsersRegistersList = ({ page }: { page: number }) => {
   const { data, error } = useSuspenseQuery(GET_ALL_REGISTERED_TIMES, {
     variables: {
+      sort: "timeRegistered:DESC",
       limit: limit,
       start: page * limit,
     },

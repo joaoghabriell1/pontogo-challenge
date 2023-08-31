@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PrivateRoutesLayout from "../layouts/PrivateRoutesLayout";
 import Dashboard from "../pages/Dashboard";
 import Registers from "../pages/UserRegisters";
-import Home from "../pages/Home copy";
+import Home from "../pages/Home";
 import Login from "../pages/Login";
 
 const Routes = () => {

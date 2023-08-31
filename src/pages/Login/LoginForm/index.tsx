@@ -1,6 +1,6 @@
 import { Flex, FormControl, Button, FormErrorMessage } from "@chakra-ui/react";
 import { LOGIN_USER_MUTATION } from "../../../api/mutations";
-import { Form, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { useState } from "react";
 
@@ -71,7 +71,7 @@ function LoginForm() {
           <FormControl isInvalid={error}>
             {error && (
               <FormErrorMessage color="red" fontWeight="500">
-                Senha ou E-mail Inválidos, tente novamente!
+                Senha ou E-mail inválidos, tente novamente!
               </FormErrorMessage>
             )}
           </FormControl>

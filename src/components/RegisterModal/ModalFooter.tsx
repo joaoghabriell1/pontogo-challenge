@@ -13,14 +13,13 @@ interface Props {
 const RegisterModalFooter = ({ onClose }: Props) => {
   const context: Outlet = useOutletContext();
   const id = context.id;
-
   const [createRegisteredTime] = useMutation(REGISTER_NEW_TIME_MUTATION, {
     variables: {
       input: {
         data: {
-          timeRegistered: new Date(),
+          timeRegistered: new Date().toISOString(),
           user: id,
-          published_at: new Date(),
+          published_at: new Date().toISOString(),
           created_by: id,
           updated_by: id,
         },
