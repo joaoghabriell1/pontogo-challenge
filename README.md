@@ -30,14 +30,17 @@ git clone https://github.com/joaoghabriell1/pontogo-challenge.git
 ```
 npm install
 ```
-* Para --:
-```
-npm run codegen
-```
 
 * Para rodar o projeto:
 ```
 npm run dev
 ```
+
+## 💾 Geração de tipos
+* Para geração de tipos das queries e mutations, caso necessário:
+```
+npm run codegen
+```
+
 
 
