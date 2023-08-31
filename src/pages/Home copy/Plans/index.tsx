@@ -4,8 +4,10 @@ import PlansHeading from "./Heading";
 const Plans = () => {
   return (
     <>
-      <PlansHeading />
-      <PlansList />
+      <div id="plans">
+        <PlansHeading />
+        <PlansList />
+      </div>
     </>
   );
 };

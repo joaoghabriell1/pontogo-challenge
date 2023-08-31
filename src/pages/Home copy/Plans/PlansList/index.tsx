@@ -52,7 +52,7 @@ const PlansList = () => {
 
   return (
     <>
-      <Flex align="center" justify="center">
+      <Flex id="plans" align="center" justify="center">
         <motion.button
           whileHover={{
             scale: "1.4",

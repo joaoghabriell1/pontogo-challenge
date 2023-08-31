@@ -1,5 +1,6 @@
 import { Heading, Box, Text, ButtonGroup } from "@chakra-ui/react";
 import PrimaryButton from "../../../components/PrimaryButton";
+import { Link } from "react-router-dom";
 
 const Content = () => {
   return (
@@ -44,19 +45,22 @@ const Content = () => {
           Com o PontoGo seus colaboradores poderão bater seus pontos de forma
           fácil e rápida, possuindo também uma Dashboard intuitiva.
         </Text>
+
         <ButtonGroup>
           <PrimaryButton
             bg="secondary-color"
             color="pure-white"
             text="Assinar agora"
           />
-          <PrimaryButton
-            bg="transparent"
-            color="pure-white"
-            variant="outline"
-            text="Ver Planos"
-            border=" 1px solid pure-white"
-          />
+          <Link onClick={() => window.location.replace("/#plans")} to="#plans">
+            <PrimaryButton
+              bg="transparent"
+              color="pure-white"
+              variant="outline"
+              text="Ver Planos"
+              border=" 1px solid pure-white"
+            />
+          </Link>
         </ButtonGroup>
       </Box>
     </>

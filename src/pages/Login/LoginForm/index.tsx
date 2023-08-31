@@ -1,6 +1,6 @@
-import { Flex, FormControl, Button } from "@chakra-ui/react";
+import { Flex, FormControl, Button, FormErrorMessage } from "@chakra-ui/react";
 import { LOGIN_USER_MUTATION } from "../../../api/mutations";
-import { useNavigate } from "react-router-dom";
+import { Form, useNavigate } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { useState } from "react";
 
@@ -9,15 +9,19 @@ import PasswordInput from "./PasswordInput";
 import FormHeading from "./Heading";
 
 function LoginForm() {
+  const [error, setError] = useState<boolean>(false);
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
   });
 
-  const [login, { loading, error }] = useMutation(LOGIN_USER_MUTATION);
+  const [login, { loading }] = useMutation(LOGIN_USER_MUTATION);
   const navigate = useNavigate();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (error) {
+      setError(false);
+    }
     const { value, name } = e.currentTarget;
     setInputs((prev) => {
       return { ...prev, [name]: value };
@@ -44,8 +48,10 @@ function LoginForm() {
           navigate("/meus-registros");
         }
       },
-      onError: ({ networkError }) => {
-        console.log(networkError);
+      onError: (error) => {
+        if (error) {
+          setError(true);
+        }
       },
     });
   };
@@ -54,7 +60,7 @@ function LoginForm() {
     <>
       <Flex
         sx={{
-          form: { maxW: "25rem", ml: "8rem" },
+          form: { maxW: "25rem", ml: { base: "0rem", sm: "3rem", md: "8rem" } },
         }}
         justify="center"
         direction="column"
@@ -62,7 +68,14 @@ function LoginForm() {
       >
         <form onSubmit={handleLogin}>
           <FormHeading />
-          <FormControl mb="1.25rem" as="fieldset">
+          <FormControl isInvalid={error}>
+            {error && (
+              <FormErrorMessage color="red" fontWeight="500">
+                Senha ou E-mail Inválidos, tente novamente!
+              </FormErrorMessage>
+            )}
+          </FormControl>
+          <FormControl isInvalid={error} mb="1.25rem" as="fieldset">
             <DefaultInput
               label="Email"
               placeHolder="exemplo@email.com"
@@ -71,7 +84,7 @@ function LoginForm() {
               onChange={handleInputChange}
             />
           </FormControl>
-          <FormControl mb="1.8rem">
+          <FormControl isInvalid={error} mb="1.8rem">
             <PasswordInput
               label="Senha"
               placeHolder="*********"
@@ -88,7 +101,7 @@ function LoginForm() {
             width="100%"
             _hover={{ bg: "main-color", opacity: ".8" }}
           >
-            {loading ? "Connecting" : "Entrar"}
+            {loading ? "Conectando..." : "Entrar"}
           </Button>
         </form>
       </Flex>

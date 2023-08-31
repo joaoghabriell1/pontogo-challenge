@@ -11,7 +11,7 @@ const Login = () => {
         px={{ base: "1rem", xl: "0rem" }}
         h="100vh"
       >
-        <Flex>
+        <Flex flexDirection={{ base: "column", sm: "row" }}>
           <LoginHero />
           <LoginForm />
         </Flex>

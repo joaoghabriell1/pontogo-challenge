@@ -17,7 +17,12 @@ const NavBar = () => {
             <Link to="/">Início</Link>
           </ListItem>
           <ListItem pl={{ base: "3", sm: "12" }}>
-            <Link to="/">Planos</Link>
+            <Link
+              onClick={() => window.location.replace("/#plans")}
+              to="/#plans"
+            >
+              Planos
+            </Link>
           </ListItem>
           <ListItem pl={{ base: "3", sm: "12" }}>
             <PrimaryButton
