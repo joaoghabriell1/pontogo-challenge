@@ -1,6 +1,6 @@
 import RightArrow from "../../../../assets/icon-right-arrow.svg";
 import LeftArrow from "../../../../assets/icon-left-arrow.svg";
-import { HStack, Image, Flex, Button } from "@chakra-ui/react";
+import { HStack, Image, Flex } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import PlanCard from "../PlanCard";
 import { useState } from "react";
