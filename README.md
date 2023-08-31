@@ -41,6 +41,3 @@ npm run dev
 ```
 npm run codegen
 ```
-
-
-
